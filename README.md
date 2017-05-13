@@ -28,5 +28,5 @@
 # 1. look for all occurences in given folder
 # 2. split the output into columns, where whe treat : as a separator
 # 3. take 1st column and redirect the output(pdf names) to evince, which is pdf program
-pdfgrep <regex/phrase in double quotes> * | cut -d: -f1 | evince 
+evince $(pdfgrep <regex/phrase in double quotes> * | cut -d: -f1) 
 ```
