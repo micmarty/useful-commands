@@ -21,6 +21,7 @@
 	grep -r "<phrase_here>" .
 ```
 2. **Open all pdfs which contains given phrase**
+
 ```bash
 # first install pdfgrep (available in package manager, for sure: apt)
 # secondly install evince (also in pm) - it's a pdf viewer appliaction
@@ -30,9 +31,17 @@
 # 3. take 1st column and redirect the output(pdf names) to evince, which is pdf program
 evince $(pdfgrep <regex/phrase in double quotes> * | cut -d: -f1) 
 ```
-3. Aliases for docker-compose with Rails(paste it inside your .bashrc or zshconfi
+3. **Aliases for docker-compose with Rails(paste it inside your .bashrc or zshconfi**
+
 ```bash
 # up with cleared runngin server flag
 alias duc="rm tmp/pids/server.pid; docker compose up"
 alias deb="docker-compose exec app bash"
+```
+4. **Remove n random files from directory**
+
+```bash
+N=10
+FROM=<some path>
+rm $(ls $FROM | shuf -n $N)
 ```
